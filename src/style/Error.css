@@ -1,0 +1,9 @@
+#error{
+    height: 100vh;
+    background: url(../assets/bg.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    text-align: end;
+    overflow: hidden;
+}

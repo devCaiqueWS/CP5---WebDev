@@ -1,0 +1,14 @@
+.content {
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .content-item {
+    flex: 1;
+    padding: 20px;
+    margin: 10px;
+    margin-bottom: 40px;
+    border-left: 1px solid #000;
+    border-right: 1px solid #000;
+  }
+  

@@ -1,0 +1,55 @@
+@import url('https://fonts.googleapis.com/css2?family=Rampart+One&family=Roboto:wght@400;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Martian+Mono:wght@300&display=swap');
+
+header {
+      background-color: #ff0000;
+      color: white;
+      padding: 10px;
+      display: flex;
+      align-items: center;
+      text-align: center;
+      justify-content: space-between;
+      font-family: 'Martian Mono', monospace;
+      box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.2);
+  }
+
+  h1{
+    font-family: 'Rampart One', sans-serif;
+    color: #000;
+    font-size: 50px;
+    padding: 0;
+    margin: 0;
+  }
+  
+  nav a {
+    color: white;
+    text-decoration: none;
+    margin: 5px 0; 
+  }
+  nav a:hover{
+    border-bottom: 2px solid #000;
+  }
+  nav h1 {
+    margin: 0;
+    padding: 0;
+    font-size: 24px;
+  }
+
+  nav ul{
+    display: flex;
+    text-decoration: none;
+    list-style: none;
+    justify-content: space-between;
+    align-items: end;
+  }
+  nav li{
+    padding: 0 30px;
+  }
+  nav button{
+    border: 2px solid #000;
+    background-color: #000;
+    color: #fff;
+    font-size: 12pt;
+    font-family: 'Martian Mono', monospace;
+    border-radius: 5px;
+  }

@@ -1,0 +1,19 @@
+.content {
+    display: flex;
+    align-items: center;
+  }
+  
+  .content-item {
+    flex: 1;
+    padding: 20px;
+  }
+  
+  .content-item .content-text {
+    margin-right: 20px; /* Espaçamento entre o texto e a imagem */
+  }
+  
+  .content-item img {
+    max-width: 100%;
+    display: block;
+  }
+  
