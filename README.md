@@ -13,8 +13,8 @@ npm react-router-dom
 ---
 
 # Equipe Desk{tops}
-Caíque Walter Silva RM550693
-Enricco Rossi RM551717
-Gabriel Marquez Trevisan RM99227
-Guilherme Nobre RM98604
-Silvia Kavabata RM97650
+- Caíque Walter Silva RM550693
+- Enricco Rossi RM551717
+- Gabriel Marquez Trevisan RM99227
+- Guilherme Nobre RM98604
+- Silvia Kavabata RM97650
