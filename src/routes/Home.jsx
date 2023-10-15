@@ -5,15 +5,18 @@ import styles from "../routes/estilo.module.css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 
+
+import img1 from "../assets/img1.jpg";
+import img2 from "../assets/img2.jpg";
+import img3 from "../assets/img3.jpg";
+
 function Home() {
-  //Hook- useState
   const [slidePerView, setSlidePerView] = useState(2);
 
-  // criando o objeto de imagens
   const imagens = [
-    { id: "1", image: "./src/assets/img1.jpg" },
-    { id: "2", image: "./src/assets/img2.jpg" },
-    { id: "3", image: "./src/assets/img3.jpg" },
+    { id: "1", image: img1 },
+    { id: "2", image: img2 },
+    { id: "3", image: img3 },
   ];
   //criando o hook useEfect - efeito colateral
 
