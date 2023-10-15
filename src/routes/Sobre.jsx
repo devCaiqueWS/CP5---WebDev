@@ -31,7 +31,7 @@ function Sobre (){
         </section>
         <section className="content">
           <div className="content-item">
-            <img src="imagem-int1" alt=""/>
+            <img src="./src/assets/gabriel.jpeg" alt=""/>
           </div>
           <div className="content-item">
             <div className="content-text">
@@ -49,12 +49,12 @@ function Sobre (){
             </div>
               </div>
           <div className="content-item">
-            <img src="imagem-int1" alt=""/>
+            <img src="./src/assets/guilherme.jpeg" alt=""/>
           </div>
         </section>
         <section className="content">
           <div className="content-item">
-            <img src="imagem-int1" alt=""/>
+            <img src="./src/assets/silvia.jpeg" alt=""/>
           </div>
           <div className="content-item">
             <div className="content-text">
