@@ -1,5 +1,6 @@
-import {} from 'react'
+import {} from 'react';
 import '../style/Sobre.css';
+
 
 function Sobre (){
   return(
@@ -7,7 +8,7 @@ function Sobre (){
     <h1>Sobre</h1>
         <section className="content">
           <div className="content-item">
-            <img src="imagem-int1" alt=""/>
+            <img src="./src/assets/caique.jpeg" alt=""/>
           </div>
           <div className="content-item">
             <div className="content-text">
@@ -25,7 +26,7 @@ function Sobre (){
             </div>
               </div>
           <div className="content-item">
-            <img src="imagem-int1" alt=""/>
+            <img src="./src/assets/enricco.jpeg" alt=""/>
           </div>
         </section>
         <section className="content">
