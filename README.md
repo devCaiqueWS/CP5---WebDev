@@ -7,7 +7,7 @@ npm react-router-dom
 
 ---
 
-# Deploy:
+# Deploy: https://cp5-web-dev.netlify.app
 
 
 ---
