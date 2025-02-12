@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import '../style/Home.css';
+// import '../style/Home.css';
 import { Swiper, SwiperSlide } from "swiper/react";
 import styles from "../routes/estilo.module.css";
 import "swiper/css/navigation";

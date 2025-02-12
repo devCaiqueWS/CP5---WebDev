@@ -8,9 +8,7 @@ import Produtos from './routes/Produtos.jsx';
 import Inserir from './routes/Inserir.jsx';
 import Editar from './routes/Editar.jsx';
 import Excluir from './routes/Excluir.jsx';
-import Conteudo from './routes/Sobre.jsx';
 import Login from './routes/Login.jsx';
-import Sobre from './routes/Sobre.jsx';
 import Pedido from './routes/Pedido.jsx';
 
 
@@ -24,7 +22,6 @@ const router = createBrowserRouter([
       { path: '/', element: <Home /> },
       { path: '/login', element: <Login/> },
       { path: '/produtos', element: <Produtos /> },
-      { path: '/sobre', element: <Sobre /> },
       { path: '/cadastrar/produto', element: <Inserir /> },
       { path: '/cadastrar/pedido', element: <Pedido /> },
       { path: '/editar/produtos/:id', element: <Editar /> },

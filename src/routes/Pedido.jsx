@@ -1,27 +1,62 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { FaPlus } from 'react-icons/fa';
 import { ListaProdutos } from '../components/ListaProdutos';
-import '../style/Pedido.css';
 
 function Pedido() {
+  const [produtos, setProdutos] = useState([]);
   const [pedido, setPedido] = useState({
     id: '',
     cliente: '',
     endereco: '',
-    total: '',
+    total: 0,
     produtosSelecionados: [],
   });
 
+  useEffect(() => {
+    fetch('http://localhost:5000/products', {
+      method: 'GET',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+    })
+      .then((resp) => resp.json())
+      .then((data) => setProdutos(data))
+      .catch((error) => console.error(error));
+  }, []);
+
   const adicionarProdutoAoPedido = (produto) => {
+    const novosProdutosSelecionados = [...pedido.produtosSelecionados, produto];
+    const novoTotal = novosProdutosSelecionados.reduce((acc, prod) => acc + parseFloat(prod.valor), 0);
     setPedido({
       ...pedido,
-      produtosSelecionados: [...pedido.produtosSelecionados, produto],
+      produtosSelecionados: novosProdutosSelecionados,
+      total: novoTotal,
     });
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log(pedido);
+    const nextId = pedido.length > 0 ? Math.max(...pedido.map(p => p.id)) + 1 : 1;
+    const pedidoComId = { ...pedido, id: nextId };
+    fetch('http://localhost:5000/orders', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(pedidoComId),
+    })
+      .then((resp) => resp.json())
+      .then((data) => {
+        console.log('Pedido cadastrado com sucesso:', data);
+        setPedido({
+          id: '',
+          cliente: '',
+          endereco: '',
+          total: 0,
+          produtosSelecionados: [],
+        });
+      })
+      .catch((error) => console.error(error));
   };
 
   return (
@@ -31,15 +66,16 @@ function Pedido() {
         <fieldset>
           <legend>PRODUTOS DISPONÍVEIS: </legend>
           <ul>
-            {ListaProdutos.map((produto) => (
+            {produtos.map((produto) => (
               <li key={produto.id}>
                 <button
+                  type="button"
                   onClick={() => adicionarProdutoAoPedido(produto)}
-                  className="adicionar-botao"
+                  className="addBtn"
                 >
                   <FaPlus />
                 </button>
-                {produto.nome} - R$ {produto.valor},00
+                {produto.nome} - R$ {produto.valor}
               </li>
             ))}
           </ul>
@@ -74,12 +110,22 @@ function Pedido() {
               name="total"
               id="idTotal"
               value={pedido.total}
-              onChange={(e) => setPedido({ ...pedido, total: e.target.value })}
+              readOnly
             />
           </p>
         </fieldset>
         <button type="submit" className='cc'>CADASTRAR PEDIDO</button>
       </form>
+
+      <h2>Produtos Selecionados</h2>
+      <ul>
+        {pedido.produtosSelecionados.map((produto, index) => (
+          <li key={index}>
+            {produto.nome} - R$ {produto.valor}
+          </li>
+        ))}
+      </ul>
+      <br /><br /><br /><br /><br /><br />
     </section>
   );
 }

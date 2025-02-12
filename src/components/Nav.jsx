@@ -1,6 +1,6 @@
 import {} from 'react';
 import { Link,useNavigate } from 'react-router-dom';
-import '../style/Nav.css'
+// import '../style/Nav.css'
 
 function Nav() {
 /*Hook- useNavigate */
@@ -26,12 +26,8 @@ function Nav() {
             <li>
               <Link to="/">Home</Link>
             </li>
-       
             <li>
-              <Link to="sobre">Sobre</Link>
-            </li>
-            <li>
-              <Link to="/cadastrar/produto">Produtos</Link>
+              <Link to="/produtos">Produtos</Link>
             </li>
             <li>
               <Link to="/cadastrar/pedido">Pedidos</Link>
